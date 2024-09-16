@@ -1,11 +1,17 @@
 package com.example.demo;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Reserva{
 
-    public  String id;
-    public  String status;
+    private  String id;
+    private EnumStatusReserva status;
+    boolean achouReserva = false;
 
-    public Reserva(String id, String status){
+    public Reserva(String id, EnumStatusReserva status){
         this.id=id;
         this.status=status;
     }
@@ -16,7 +22,7 @@ public class Reserva{
     public String setId(){
         return id;
     }
-    public String getStatus(){
+    public EnumStatusReserva getStatus(){
         return status;
     }
 
@@ -30,7 +36,7 @@ public class Reserva{
 
                 
         
-                for(Reserva reserva: ){
+                for(Reserva reserva: ListadeReserva){
                     if (reserva.getStatus().equals("Concluída")){
                         System.out.println(reserva);
                         achouReserva = true;
@@ -52,4 +58,5 @@ public class Reserva{
 
                 }
 
+}
 }

@@ -1,9 +1,23 @@
 package com.example.demo;
 
+import java.util.ArrayList;
+import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Getter
+@Setter
 public class Cliente extends Usuario {
 
-    public Cliente(String nome) {
+    private int diarias;
+
+
+    public static List <Reserva> reservas = new ArrayList<Reserva>();
+    public Cliente(String nome, int diarias) {
         super(nome);
+        this.diarias=diarias;
+        
         
     }
 // Apos cadastrar o cliente, aparecer msg o check in e realizado pagamento pendente.
@@ -28,10 +42,10 @@ public class Cliente extends Usuario {
             System.out.println("Reserva não encontrada");
             
             }else {
-                System.out.println("Reservas concluídas");
+                System.out.println("Reservas");
                 for (int i = 0; i <reservas.size(); i++) {
-                    System.out.println((i+1)+ "Nome do cliente: " + Cliente.get(i));
-                    
+                    System.out.println((i+1)+ "Nome do cliente: " + Cliente.get(i).getNome() + Cliente.get(i).getCpf);
+                                        
                 }
 
             }
@@ -47,7 +61,7 @@ public class Cliente extends Usuario {
                         achouReserva = true;
                     }
                 }
-                        if (!achouReservas){
+                        if (! achouReservas){
                             System.out.println("Reserva não encontrada.");
     
                         }
@@ -68,5 +82,5 @@ public class Cliente extends Usuario {
             System.out.println("Reserva não encontrada.");
         }          
 
-}
+
 

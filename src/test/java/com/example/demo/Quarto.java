@@ -5,19 +5,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public abstract class Usuario {
+public class Quarto {
     private String nome;
     private String cpf;
     private String email;
     private String celular;
-  
-
     
-
-    public Usuario(String nome) {
-        this.nome = nome;
-        
-    }
-  
-    public abstract void exibirMenu();
+    
 }
